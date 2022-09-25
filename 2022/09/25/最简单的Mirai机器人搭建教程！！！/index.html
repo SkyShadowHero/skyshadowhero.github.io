@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>最简单的Mirai机器人搭建教程！！！ | SkyShadowHero&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="大家好！！！       最近，因为某种神奇的原因，无数的QQ机器人框架都莫明地停运了       从一开始的酷Q，到最近的onobot和小迪迪">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最简单的Mirai机器人搭建教程！！！">
+<meta property="og:url" content="https://skyshadowhero.github.io/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/index.html">
+<meta property="og:site_name" content="SkyShadowHero&#39;s Blog">
+<meta property="og:description" content="大家好！！！       最近，因为某种神奇的原因，无数的QQ机器人框架都莫明地停运了       从一开始的酷Q，到最近的onobot和小迪迪">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071136401384.png">
+<meta property="og:image" content="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071335527199.png">
+<meta property="og:image" content="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071450350199.png">
+<meta property="og:image" content="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071578187866.png">
+<meta property="og:image" content="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071658721966.png">
+<meta property="og:image" content="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664074259416965.png">
+<meta property="og:image" content="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664075441688801.png">
+<meta property="og:image" content="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664080491387851.png">
+<meta property="article:published_time" content="2022-09-25T07:00:14.000Z">
+<meta property="article:modified_time" content="2022-09-25T07:00:56.999Z">
+<meta property="article:author" content="SkyShadowHero">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071136401384.png">
+  
+    <link rel="alternate" href="/atom.xml" title="SkyShadowHero's Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">SkyShadowHero&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://skyshadowhero.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-最简单的Mirai机器人搭建教程！！！" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/" class="article-date">
+  <time class="dt-published" datetime="2022-09-25T07:00:14.000Z" itemprop="datePublished">2022-09-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      最简单的Mirai机器人搭建教程！！！
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p style="text-align: left;">
+    <span style="font-size: 16px;">大家好！！！</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">最近，因为某种神奇的原因，无数的QQ机器人框架都莫明地停运了</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">从一开始的酷Q，到最近的onobot和小迪迪</span>
+</p><span id="more"></span>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">QQ机器人的路越来越窄了</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">目前存在的，有名的就还有小栗子，Drea，NoneBot2和Mirai</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">小栗子收费了...</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">NoneBot2太麻烦了（Python环境）<br/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">Mirai也麻烦，但还是有很简单的方法</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">天影大侠无聊就做了一个Mirai机器人</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">并找到了非常简单的方法</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">正文如下↓</span>
+</p>
+<hr/>
+<p style="text-align: left;">
+    <span style="font-size: 20px;">1</span><span style="font-size: 20px;">.安装Java</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;"><span style="font-size: 18px;"><span style="font-size: 16px;">Mirai</span></span>需要Java，甲骨文和OpenJDK都可以</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">最好用OpenJDK<br/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">这里是</span><a href="https://www.openlogic.com/openjdk-downloads" target="_blank" title="OpenJDK8-11下载链接" textvalue="OpenJDK8-11下载链接"><span style="text-decoration: underline;"><strong><span style="font-size: 16px; text-decoration: underline;">OpenJDK8-11下载链接</span></strong></span></a><strong>(</strong>下载哪一个？<span style="font-size: 16px; text-decoration: none;">Windows下载那个Windows的，Linux下载Linux的，以此类推？)</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">下载好后，安装</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">之后点击Win+R（Win就是你键盘左右下角那个Windows的标志）</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">输入&quot;cmd&quot;</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">就会弹出以下窗口</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;"><img src="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071136401384.png" alt="图片.png"/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">不陌生吧这</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">输入java --version，它会弹出你的Java信息</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;"><img src="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071335527199.png" alt="图片.png"/><br/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">这就完成了！直接去看下一栏</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">但有时会不正常弹出，就可以看看下面<br/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;"><img src="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071450350199.png" alt="图片.png"/><br/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">这时候就是环境path没弄好</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">也好解决，右键&quot;计算机&quot;，点击&quot;属性&quot;，再点击弹出窗口左边的&quot;高级系统设置&quot;</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;"><img src="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071578187866.png" alt="图片.png"/><br/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">再点击&quot;环境变量&quot;</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;"><img src="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664071658721966.png" alt="图片.png"/><br/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">在系统变量里查看是否有&quot;JAVA_HOME&quot;,将其修改为你安装Java的路径</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">如我的是Java19，为:C:\Program Files\Java\jdk-19&quot;</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">再在系统变量里的&quot;path&quot;里查看是否有&quot;;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin&quot;</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">没有就添加上</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">这样的话再在cmd里重试java --version，就可以正常弹出信息了！</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">当然如果你一开始就正常的话以上就当做废话，</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">如果你还是不正常的话就去百度查查咋办</span>
+</p>
+<hr/>
+<p style="text-align: left;">
+    <span style="font-size: 20px;">2.下载MCL(Mirai Console Loader)</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">MCL是官方的Mirai启动器</span>
+</p>
+<p style="text-align: left;">
+    <a href="https://github.com/iTXTech/mirai-console-loader/releases" target="_blank" title="这里下载！" textvalue="这里下载！"><span style="text-decoration: underline;"><strong><span style="font-size: 16px; text-decoration: underline;">这里下载！</span><span style="font-size: 20px; text-decoration: underline;"><br/></span></strong></span></a><span style="font-size: 16px;">下载好后解压到一个文件夹里</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">打开mcl.bat，它就会自动生成相关文件</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 20px;"><img src="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664074259416965.png" alt="图片.png"/><span style="font-size: 16px;"></span></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 20px;"><span style="font-size: 16px;">就是这些</span><br/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 20px;">(注：如果你聪明，也可以用其他方式，只是MCL最简单而已)</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 20px;"></span>
+</p>
+<hr/>
+<p style="text-align: left;">
+    <span style="font-size: 20px;">3.安装插件</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">Mirai有专门的论坛，里面有分享的插件</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;"><img src="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664075441688801.png" alt="图片.png"/><br/></span>
+</p>
+<p style="text-align: left;">
+    <a href="https://mirai.mamoe.net/" target="_blank" title="论坛在这！"><strong><span style="font-size: 16px; text-decoration: underline;">论坛在这！</span></strong><span style="font-size: 16px; text-decoration: underline;"><br/></span></a>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">在里面找到自己想要的插件（或者自己去做插件）</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">一般这里面的插件都会有GitHub链接，称之为“项目地址”，在里面会有一些安装插件的简易教程</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">但当初我第一次进GitHub时就是找不到在哪里下载...</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">所以这里给某些第一次进GitHub的提示一下，项目在&quot;release&quot;里下载！</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">Mirai插件一般是.jar文件，像我的世界插件一样</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">把下载所得的文件放在plugin文件夹里，也像我的世界插件一样（当然了，我的世界和Mirai都是Java环境的）</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;"></span>
+</p>
+<hr/>
+<p style="text-align: left;">
+    <span style="font-size: 20px;">4.登录并设置权限</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 20px;"><span style="font-size: 16px;">有了插件以后，你的机器人就可以回复了！</span></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 20px;"><span style="font-size: 16px;">但你还没登录，用啥回复...</span></span>
+</p>
+<p style="text-align: left;">
+    <span style="text-decoration: line-through; font-size: 16px;">在QQ官网注册一个QQ号，记住密码和账号</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">运行mcl.bat，等它一切加载好后，输入/login 你的账号 你的密码</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">就可以登录了！</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">当然每次都要输入很麻烦</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">输入/autoLogin 你的账号 你的密码 来设置自动登录！</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">去跟你的机器人说句话，看看他会回你不</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">可能不会回复，怎么回事？！</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">你没有设置权限！</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">有的插件不是默认所有人都能用的</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">这时就需要/permission add 权限人 权限</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">权限人可以为好友，可以为群，具体看</span><a href="https://github.com/mamoe/mirai-console/blob/master/docs/Permissions.md" target="_blank" title="这里"><span style="font-size: 16px; text-decoration: underline;"><strong>这里</strong></span></a><span style="font-size: 16px; text-decoration: none;">！<br/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">或者直接一个&quot;*&quot;代表所有人，所有群</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">权限的话可以输入/permission lp查看，一般的插件介绍里也有</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">这样，再把你的机器人邀请进一个群里就可以开始和你的机器人一起聊天了！</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;"><img src="https://skyshadowhero.is-best.net/zb_users/upload/2022/09/202209251664080491387851.png" alt="图片.png"/></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;">亲测斗地主！</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;"></span>
+</p>
+<hr/>
+<p style="text-align: left;">
+    <span style="font-size: 20px;">5.注意事项</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">1.斗地主或者狼人杀时最好让你的好友们加机器人好友，这种话又多又私聊的最容易被误封了</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">2.如果mcl.bat闪退的话，在装有此文件的文件夹里SHIFT+右键，选择&quot;在此处打开命令窗口&quot;，</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">再输入mcl。这样它出问题了就不会闪退，就可以将错误截图然后问大佬们了！</span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px;">3.这个教程面向新手的，不喜欢勿喷；喜欢的可以留个言之类的！<br/></span><span style="font-size: 16px; text-decoration: none;"></span>
+</p>
+<p style="text-align: left;">
+    <span style="font-size: 16px; text-decoration: none;"><br/></span>
+</p>
+<p style="text-align: left;">
+    <br/>
+</p>
+<p style="text-align: left;">
+    <br/>
+</p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://skyshadowhero.github.io/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/" data-id="cl8gzt07j0001m0xb00um1vrt" data-title="最简单的Mirai机器人搭建教程！！！" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/09/25/%E4%B8%80%E4%BA%9Bvbs%E5%B0%8F%E8%B5%84%E6%BA%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">一些vbs小资源</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/">最简单的Mirai机器人搭建教程！！！</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/25/%E4%B8%80%E4%BA%9Bvbs%E5%B0%8F%E8%B5%84%E6%BA%90/">一些vbs小资源</a>
+          </li>
+        
+          <li>
+            <a href="/2022/09/25/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%A4%A9%E5%BD%B1%E5%A4%A7%E4%BE%A0%E7%9A%84%E5%B0%8F%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%81%EF%BC%81/">欢迎来到天影大侠的小博客！！！</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 SkyShadowHero<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
