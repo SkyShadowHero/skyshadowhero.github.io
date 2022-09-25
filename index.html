@@ -1,312 +1,291 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>SkyShadowHero&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>SkyShadowHero's Blog</title><meta name="author" content="SkyShadowHero"><meta name="copyright" content="SkyShadowHero"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="SkyShadowHero&#39;s Blog">
 <meta property="og:url" content="https://skyshadowhero.github.io/index.html">
 <meta property="og:site_name" content="SkyShadowHero&#39;s Blog">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="SkyShadowHero">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://skyshadowhero.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SkyShadowHero\'s Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-09-25 16:02:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="SkyShadowHero's Blog" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">SkyShadowHero's Blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">SkyShadowHero's Blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/" title="最简单的Mirai机器人搭建教程！！！">最简单的Mirai机器人搭建教程！！！</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-25T07:00:14.000Z" title="发表于 2022-09-25 15:00:14">2022-09-25</time></span></div><div class="content">
+    大家好！！！
 
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">SkyShadowHero&#39;s Blog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://skyshadowhero.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
+    最近，因为某种神奇的原因，无数的QQ机器人框架都莫明地停运了
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-最简单的Mirai机器人搭建教程！！！" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/" class="article-date">
-  <time class="dt-published" datetime="2022-09-25T07:00:14.000Z" itemprop="datePublished">2022-09-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/">最简单的Mirai机器人搭建教程！！！</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p style="text-align: left;">
-    <span style="font-size: 16px;">大家好！！！</span>
-</p>
-<p style="text-align: left;">
-    <span style="font-size: 16px;">最近，因为某种神奇的原因，无数的QQ机器人框架都莫明地停运了</span>
-</p>
-<p style="text-align: left;">
-    <span style="font-size: 16px;">从一开始的酷Q，到最近的onobot和小迪迪</span>
-</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://skyshadowhero.github.io/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/" data-id="cl8gzt07j0001m0xb00um1vrt" data-title="最简单的Mirai机器人搭建教程！！！" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+    从一开始的酷Q，到最近的onobot和小迪迪
+
+
+    QQ机器人的路越来越窄了
+
+
+    目前存在的，有名的就还有小栗子，Drea，NoneBot2和Mirai
+
+
+    小栗子收费了...
+
+
+    NoneBot2太麻烦了（Python环境）
+
+
+    Mirai也麻烦，但还是有很简单的方法
+
+
+    天影大侠无聊就做了一个Mirai机器人
+
+
+    并找到了非常简单的方法
+
+
+    正文如下↓
 
 
 
-  
-    <article id="post-一些vbs小资源" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/25/%E4%B8%80%E4%BA%9Bvbs%E5%B0%8F%E8%B5%84%E6%BA%90/" class="article-date">
-  <time class="dt-published" datetime="2022-09-25T06:57:16.000Z" itemprop="datePublished">2022-09-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/25/%E4%B8%80%E4%BA%9Bvbs%E5%B0%8F%E8%B5%84%E6%BA%90/">一些vbs小资源</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <pre><br style="text-align: left;"/></pre>
-<p style="text-align: left;">
-    <span style="font-size: 16px;">vbs是什么？</span><br style="text-align: left;"/>
-</p>
-<p style="text-align: left;">
-    <span style="font-size: 16px;">天影大侠帮你摘抄了百度百科里关于vbs的第一句话</span><br style="text-align: left;"/>
-</p>
-<p style="text-align: left;">
-    <span style="text-decoration: underline;">VBS是基于Visual Basic的脚本语言。VBS的全称是：Microsoft Visual Basic Script Edition。（微软公司可视化BASIC脚本版）。</span><br style="text-align: left;"/>
-</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/09/25/%E4%B8%80%E4%BA%9Bvbs%E5%B0%8F%E8%B5%84%E6%BA%90/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://skyshadowhero.github.io/2022/09/25/%E4%B8%80%E4%BA%9Bvbs%E5%B0%8F%E8%B5%84%E6%BA%90/" data-id="cl8gzt07d0000m0xbg8w07ven" data-title="一些vbs小资源" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+    1.安装Java
 
 
-
-  
-    <article id="post-欢迎来到天影大侠的小博客！！！" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/09/25/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%A4%A9%E5%BD%B1%E5%A4%A7%E4%BE%A0%E7%9A%84%E5%B0%8F%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%81%EF%BC%81/" class="article-date">
-  <time class="dt-published" datetime="2022-09-25T06:49:48.000Z" itemprop="datePublished">2022-09-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/09/25/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%A4%A9%E5%BD%B1%E5%A4%A7%E4%BE%A0%E7%9A%84%E5%B0%8F%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%81%EF%BC%81/">欢迎来到天影大侠的小博客！！！</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>
-    <span style="font-size: 16px;">这是天影大侠的博客！！！</span>
-</p>
-        
-          <p class="article-more-link">
-            <a href="/2022/09/25/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%A4%A9%E5%BD%B1%E5%A4%A7%E4%BE%A0%E7%9A%84%E5%B0%8F%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%81%EF%BC%81/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://skyshadowhero.github.io/2022/09/25/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%A4%A9%E5%BD%B1%E5%A4%A7%E4%BE%A0%E7%9A%84%E5%B0%8F%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%81%EF%BC%81/" data-id="cl8gzjx65000070xbdtnd5pnb" data-title="欢迎来到天影大侠的小博客！！！" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+    Mirai需要Java，甲骨文和OpenJDK都可以
 
 
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li></ul>
-    </div>
-  </div>
+    最好用OpenJDK
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/">最简单的Mirai机器人搭建教程！！！</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E4%B8%80%E4%BA%9Bvbs%E5%B0%8F%E8%B5%84%E6%BA%90/">一些vbs小资源</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/25/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%A4%A9%E5%BD%B1%E5%A4%A7%E4%BE%A0%E7%9A%84%E5%B0%8F%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%81%EF%BC%81/">欢迎来到天影大侠的小博客！！！</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+    这里是OpenJDK8-11下载链接(下载哪一个？Windows下载那个Windows的，Linux下载Linux的，以此类推？)
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 SkyShadowHero<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+    下载好后，安装
+
+
+    之后点击Win+R（Win就是你键盘左右下角那个Windows的标志）
+
+
+    输入&quot;cmd&quot;
+
+
+    就会弹出以下窗口
+
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/09/25/%E4%B8%80%E4%BA%9Bvbs%E5%B0%8F%E8%B5%84%E6%BA%90/" title="一些vbs小资源">一些vbs小资源</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-25T06:57:16.000Z" title="发表于 2022-09-25 14:57:16">2022-09-25</time></span></div><div class="content">
+
+    vbs是什么？
+
+
+    天影大侠帮你摘抄了百度百科里关于vbs的第一句话
+
+
+    VBS是基于Visual Basic的脚本语言。VBS的全称是：Microsoft Visual Basic Script Edition。（微软公司可视化BASIC脚本版）。
+
+
+    所以，从这句话中可以得出，vbs是脚本语言
+
+
+    大家可以百度查查关于vbs的其他信息，天影大侠这里贴心地准备了百度百科链接...
+
+
+    当然了，和你们一样，我只是一个新手，碰vbs都是为了整蛊好友们
+
+
+    所以，这里就分享天影大侠在网上找到的一些vbs资源
+
+
+    可以直接网盘下载，也可以复制代码，放在一个TXT文本里，保存后将后缀名改为.vbs即可！！！
+
+
+    1.一个问题，看图，长这样，如不选择&quot;是&quot;，则永不能退出！
+
+
     
 
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    
 
 
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    链接：https://share.weiyun.com/mE33CTeA 密码：wzh666
 
 
+    懒得下载？
 
 
-<script src="/js/script.js"></script>
+    好的，这里有代码：（中文的地方可以自行修改）
 
 
+    
+
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2022/09/25/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%A4%A9%E5%BD%B1%E5%A4%A7%E4%BE%A0%E7%9A%84%E5%B0%8F%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%81%EF%BC%81/" title="欢迎来到天影大侠的小博客！！！">欢迎来到天影大侠的小博客！！！</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-09-25T06:49:48.000Z" title="发表于 2022-09-25 14:49:48">2022-09-25</time></span></div><div class="content">
+    这是天影大侠的博客！！！
 
 
+    天影大侠是一个无聊的人，平时会干些无聊的事
 
-  </div>
-</body>
-</html>
+
+    像开开我的世界服务器，做做QQ机器人，做做游戏
+
+
+    但天影大侠貌似不是很聪明...
+
+
+    每次跟着教程走，都会有无数的问题
+
+
+    我想一定有很多的新手像我一样
+
+
+    看着网上的教程也不会
+
+
+    像一些教程，说要执行XXX -XXX
+
+
+    但也没说咋执行
+
+
+    天影大侠可吃了不少的坑
+
+
+    所以这个博客里会有天影大侠的一些闲事
+
+
+    和一些新手化的教程(自己就是个新手...)
+
+
+    所以如果碰见有用的教程，评论一下吧！
+
+
+    天影大侠只是想用评论数去炫耀...
+
+
+    
+
+
+    
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">SkyShadowHero</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2022/09/25/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Mirai%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%EF%BC%81%EF%BC%81%EF%BC%81/" title="最简单的Mirai机器人搭建教程！！！">最简单的Mirai机器人搭建教程！！！</a><time datetime="2022-09-25T07:00:14.000Z" title="发表于 2022-09-25 15:00:14">2022-09-25</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2022/09/25/%E4%B8%80%E4%BA%9Bvbs%E5%B0%8F%E8%B5%84%E6%BA%90/" title="一些vbs小资源">一些vbs小资源</a><time datetime="2022-09-25T06:57:16.000Z" title="发表于 2022-09-25 14:57:16">2022-09-25</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2022/09/25/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%A4%A9%E5%BD%B1%E5%A4%A7%E4%BE%A0%E7%9A%84%E5%B0%8F%E5%8D%9A%E5%AE%A2%EF%BC%81%EF%BC%81%EF%BC%81/" title="欢迎来到天影大侠的小博客！！！">欢迎来到天影大侠的小博客！！！</a><time datetime="2022-09-25T06:49:48.000Z" title="发表于 2022-09-25 14:49:48">2022-09-25</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/09/"><span class="card-archive-list-date">九月 2022</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">3</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-09-25T08:02:04.953Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By SkyShadowHero</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
