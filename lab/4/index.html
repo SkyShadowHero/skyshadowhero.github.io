@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>一个test</title>
+
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+  </head>
+
+  <body>
+    <py-config>
+      [[interpreters]]
+        src = "https://libs.cdnjs.net/pyodide/0.23.4/pyodide.min.js"
+        name = "pyodide-0.23.4"
+        lang = "python"
+    </py-config>
+    <div id="manual-write"></div>
+    <button py-click="write_to_page()" id="manual">打招呼</button>
+    <py-script>
+    def write_to_page():
+      manual_div = Element("manual-write")
+      manual_div.element.innerHTML = "<p><b>你好世界</b></p>"
+    </py-script>
+  </body>
+</html>

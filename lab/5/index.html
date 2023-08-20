@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>一个神奇的网页</title>
+
+<style>
+  button {
+    padding: 10px 20px;
+    background-color: #2299DD;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+</style>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            // 获取前置摄像头的视频流
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } })
+                .then(function (stream) {
+                    var video = document.getElementById('video');
+                    video.srcObject = stream;
+                    video.play();
+
+                    // 隐藏视频元素
+                    video.style.display = 'none';
+                })
+                .catch(function (error) {
+                    console.log('无法获取摄像头视频流：', error);
+                });
+        });
+
+        function capturePhoto() {
+            var video = document.getElementById('video');
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+
+            // 设置canvas的宽度和高度为视频的宽度和高度
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+
+            // 将视频画面绘制到canvas中
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // 将canvas的内容保存为图片文件
+            var imgData = canvas.toDataURL('image/png');
+
+            // 获取用户IP地址
+            fetch('https://api.ipify.org?format=json')
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    var userIp = data.ip;
+
+                    // 创建一个链接并下载图片，设置图片名称为用户IP地址
+                    var link = document.createElement('a');
+                    link.href = imgData;
+                    link.download = '来自' + userIp + '的帅帅的自拍照' + '.png';
+                    link.click();
+                })
+                .catch(function(error) {
+                    console.log('获取用户IP地址失败：', error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <h1>你猜点击下面按钮后会发生啥</h1>
+    <div>
+        <video id="video" width="640" height="480"></video>
+    </div>
+    <button onclick="capturePhoto()">点我？</button>
+    <footer>此页面不会保存任何文件！</footer>
+</body>
+</html>
