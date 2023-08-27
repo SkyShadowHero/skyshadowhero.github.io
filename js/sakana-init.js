@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // 公告
 var typed = new Typed('#type-container', {
-  strings: ['我是公告，但这个博客似乎^1000没有公告:('],
+  strings: ['开学季！','在網站右下角可以簡繁轉換！','所有文章都换了个链接，所以所有文章的评论都消失了！'],
   showCursor: true, // 是否显示光标
   cursorChar: '<i class="iconfont icon-sword"></i>', // 光标的样式
   typeSpeed: 90,
