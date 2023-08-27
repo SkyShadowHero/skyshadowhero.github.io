@@ -21,10 +21,10 @@ var typed = new Typed('#type-container', {
   strings: ['开学季！','在網站右下角可以簡繁轉換！','所有文章都换了个链接，所以所有文章的评论都消失了！'],
   showCursor: true, // 是否显示光标
   cursorChar: '<i class="iconfont icon-sword"></i>', // 光标的样式
-  typeSpeed: 90,
+  typeSpeed: 150,
   startDelay: 3000,
   fadeOut: true,
-  fadeOutClass: 'typed-cursor',
+  loop: true
 });
 // Hello World
 var typed = new Typed('#hello-world', {
