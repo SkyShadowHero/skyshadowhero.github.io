@@ -161,3 +161,6 @@ background: rgba(255, 255, 255, 0.8)!important;
   bottom: 0;
   z-index: -2;
 }
+body {
+  background-color: rgb(135, 168, 199);
+}
