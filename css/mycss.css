@@ -150,15 +150,14 @@ background: rgba(255, 255, 255, 0.8)!important;
   transform: rotate(-30deg);
 }
 #web_bg {
-  background: rgb(135, 168, 199);
   background-image: url('https://s2.loli.net/2023/09/10/3WjfosgqSRkEaLv.png');
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: 100% auto;
-/*  position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;*/
+  z-index: -2;
 }
