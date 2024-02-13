@@ -1,3 +1,4 @@
+/*
 function initSakanaWidget() {
   const spiderman = SakanaWidget.getCharacter("chisato");
   spiderman.image = "/img/spiderman.png";
@@ -13,9 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
   script.src = "https://cdn.jsdelivr.net/npm/sakana-widget@2.5.0/lib/sakana.min.js";
   script.onload = () => {
     initSakanaWidget();
-  };
+ };
   document.body.appendChild(script);
 });
+*/
 // 公告
 var typed = new Typed('#type-container', {
   strings: ['开学季！','在網站右下角可以簡繁轉換！','所有文章都换了个链接，所以所有文章的评论都消失了！'],
