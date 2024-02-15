@@ -1,6 +1,6 @@
 /* 首页文章卡片 */
 #recent-posts > .recent-post-item{
-background:rgba(255, 255, 255, 0.8)!important;
+	background:rgba(255, 255, 255, 0.8)!important;
 }
 /* 首页侧栏卡片 */
 .card-widget{
@@ -43,10 +43,11 @@ background: rgba(255, 255, 255, 0.8)!important;
     background: transparent!important;
     }
 /*夜间模式页面背景设置为半透明*/
-[data-theme="dark"]
-  div.recent-post-item{
-      background: rgba(0, 0, 0, 0.8)!important;
-    }
+[data-theme="dark"] 
+#recent-posts > .recent-post-item{
+    background: rgba(0, 0, 0, 0.8)!important;
+}
+
 [data-theme="dark"]
   #aside-content .card-widget{
       background: rgba(0, 0, 0, 0.8)!important;
