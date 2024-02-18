@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://skyshadowhero.github.io/2024/yong-canta-shan-chu-shou-ji-zi-dai-de-xi-tong-ruan-jian/</loc>
+    
+    <lastmod>2024-02-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://skyshadowhero.github.io/2024/wu-xu-root-gei-ni-de-qq-tian-jia-mo-kuai/</loc>
     
-    <lastmod>2024-02-16</lastmod>
+    <lastmod>2024-02-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -308,6 +317,20 @@
   
   <url>
     <loc>https://skyshadowhero.github.io/tags/%E7%81%B5%E5%8A%A8%E5%B2%9B/</loc>
+    <lastmod>2024-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://skyshadowhero.github.io/tags/%E5%AE%89%E5%8D%93/</loc>
+    <lastmod>2024-02-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://skyshadowhero.github.io/tags/adb/</loc>
     <lastmod>2024-02-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
