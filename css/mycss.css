@@ -34,14 +34,14 @@ background: rgba(255, 255, 255, 0.8)!important;
       background: transparent!important;
     }
 /*夜间模式伪类遮罩层透明*/
-[data-theme="dark"]
+/*[data-theme="dark"]
   #footer::before{
       background: transparent!important;
     }
 [data-theme="dark"]
   #page-header::before{
     background: transparent!important;
-    }
+    }*/
 /*夜间模式页面背景设置为半透明*/
 [data-theme="dark"] 
 #recent-posts > .recent-post-item{
@@ -75,10 +75,10 @@ background: rgba(255, 255, 255, 0.8)!important;
   
 /*阅读模式*/
 .read-mode #aside-content .card-widget{
-      background: rgba(158, 204, 171, 0.8)!important;
+      background: rgba(158, 208, 255, 0.8)!important;
     }
 .read-mode div#post{
-    background: rgba(158, 204, 171, 0.8)!important;
+    background: rgba(158, 208, 255, 0.8)!important;
     }
 /*夜间阅读模式*/
 [data-theme="dark"]
