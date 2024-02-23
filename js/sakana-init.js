@@ -28,12 +28,3 @@ var typed = new Typed('#type-container', {
   fadeOut: true,
   loop: true
 });
-// Hello World
-var typed = new Typed('#hello-world', {
-  strings: ['Hello^3000 World!'],
-  showCursor: true, // 是否显示光标
-  cursorChar: '<i class="iconfont icon-sword"></i>', // 光标的样式
-  typeSpeed: 50,
-  startDelay: 1000,
-  loop: true,
-});
