@@ -144,7 +144,7 @@ searchBtn.addEventListener('click', function() {
   resultDiv.innerHTML = ''; 
   showOverlay();
 
-  const apiUrl = 'https://skyshadowhero.najiang.top/search?keywords=' + keywordInput.value;
+  const apiUrl = 'https://netease-cloud-music-api-pink-ten-31.vercel.app/search?keywords=' + keywordInput.value;
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
