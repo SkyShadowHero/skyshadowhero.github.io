@@ -1,10 +1,10 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>天影大侠的小博客 - it goes on...</title><meta name="author" content="天影大侠"><meta name="copyright" content="天影大侠"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="The Blog of SkyShadowHero!"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://skyshadowhero.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>天影大侠的小博客 - it goes on...</title><meta name="author" content="天影大侠"><meta name="copyright" content="天影大侠"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="The Blog of SkyShadowHero!"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://skyshadowhero.github.io/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
   localSearch: undefined,
   translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
   noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
   copy: {
     success: '复制成功',
     error: '复制错误',
@@ -24,12 +24,10 @@
   },
   copyright: undefined,
   lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#2299DD","bgDark":"#1f1f1f","position":"bottom-left"},
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
-      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
-    }
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#2299DD","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
   },
   isPhotoFigcaption: false,
   islazyload: true,
@@ -45,85 +43,78 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-02-23 11:49:12'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
+  postUpdate: '2024-02-23 11:50:58'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
         }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
         }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
 
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
         }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
-      const link = document.createElement('link')
-      link.rel = 'stylesheet'
-      link.href = url
-      if (id) link.id = id
-      link.onerror = reject
-      link.onload = link.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        link.onload = link.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(link)
-    })
-  
-      win.activateDarkMode = function () {
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
         document.documentElement.setAttribute('data-theme', 'dark')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
         }
       }
-      win.activateLightMode = function () {
+      win.activateLightMode = () => {
         document.documentElement.setAttribute('data-theme', 'light')
         if (document.querySelector('meta[name="theme-color"]') !== null) {
           document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
@@ -131,9 +122,9 @@
       }
       const t = saveToLocal.get('theme')
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
-        
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
       const asideStatus = saveToLocal.get('aside-status')
       if (asideStatus !== undefined) {
         if (asideStatus === 'hide') {
@@ -143,12 +134,12 @@
         }
       }
     
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
       }
-    }
-    detectApple()
+      detectApple()
     })(window)</script><script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" /><script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_4204714_4laudptb3pm.css"><link rel="stylesheet" href="/css/mycss.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://weavatar.com/avatar/7388ea4765a319d5f83fea61c3236384?s=500" onerror="onerror=null;src='/img/grassblock.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-youlianguanli"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/lab/"><i class="fa-fw iconfont icon-lab"></i><span> 实验室</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-gongju"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw iconfont icon-music"></i><span> 音乐搜索器</span></a></li><li><a class="site-page child" href="/height/"><i class="fa-fw iconfont icon-iconsg"></i><span> 身高计算器</span></a></li><li><a class="site-page child" href="/shuang/"><i class="fa-fw iconfont icon-shurufa"></i><span> 双拼练习器</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-menu"></i><span> 分流</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/speed/"><i class="fa-fw iconfont icon-speed"></i><span> 测速</span></a></li><li><a class="site-page child" href="https://skyshadowhero.github.io"><i class="fa-fw iconfont icon-github"></i><span> Github线路</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://skyshadowhero.vercel.app"><i class="fa-fw iconfont icon-vercel"></i><span> Vercel线路(国外)</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://s2.loli.net/2024/02/15/YwtKZAlx2Ofue7s.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="天影大侠的小博客"><img class="site-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2024/02/13/jmhO34oIixgq6Cb.webp"/></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-zhuye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-youlianguanli"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/lab/"><i class="fa-fw iconfont icon-lab"></i><span> 实验室</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-gongju"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw iconfont icon-music"></i><span> 音乐搜索器</span></a></li><li><a class="site-page child" href="/height/"><i class="fa-fw iconfont icon-iconsg"></i><span> 身高计算器</span></a></li><li><a class="site-page child" href="/shuang/"><i class="fa-fw iconfont icon-shurufa"></i><span> 双拼练习器</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw iconfont icon-menu"></i><span> 分流</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/speed/"><i class="fa-fw iconfont icon-speed"></i><span> 测速</span></a></li><li><a class="site-page child" href="https://skyshadowhero.github.io"><i class="fa-fw iconfont icon-github"></i><span> Github线路</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://skyshadowhero.vercel.app"><i class="fa-fw iconfont icon-vercel"></i><span> Vercel线路(国外)</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">天影大侠的小博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/SkyShadowHero" target="_blank" title="Github"><i class="fab fa-github" style="color: ;"></i></a><a class="social-icon" href="mailto:a1233456333@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: ;"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=3014429800" target="_blank" title="QQ"><i class="fab fa-qq" style="color: ;"></i></a><a class="social-icon" href="https://discord.com/users/916650101743706112" target="_blank" title="Discord"><i class="fab fa-discord" style="color: ;"></i></a><a class="social-icon" href="https://t.me/SkyShadowHero" target="_blank" title="Telegram"><i class="fab fa-telegram" style="color: ;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2023/gei-ni-de-wang-zhan-tian-jia-ge-ye-mian-jia-zai-jin-du-tiao/" title="给你的网站添加个页面加载进度条"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2023/07/15/LGCsEkFozJgty24.png" onerror="this.onerror=null;this.src='/img/404mc.jpg'" alt="给你的网站添加个页面加载进度条"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/gei-ni-de-wang-zhan-tian-jia-ge-ye-mian-jia-zai-jin-du-tiao/" title="给你的网站添加个页面加载进度条">给你的网站添加个页面加载进度条</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-15T07:23:59.000Z" title="发表于 2023-07-15 15:23:59">2023-07-15</time></span></div><div class="content">大家好无意中发现了一个能制作自动页面加载进度条的网页测试了一下，效果不错发来给大家试试网站在这：https://codebyzach.github.io/pace/进入后会有一个既炫酷又平平无奇的加载动画向下翻可以看到预设的一些加载动画先选择颜色，再选择样式样式随便选一个，就loading bar吧点击DOWNLOAD然后将它放在你的网站上，我就放在https://skyshadowhero.github.io/css/loading-bar.css里的然后复制网站中Get Start里中间的的代码，并将红色方框里的路径改为你所放的css文件路径然后将编辑好的代码放进html文件里的标签前即可
 
 如果使用的Hexo+Butterfly搭建博客的话可以直接将此两行代码放在_config.butterfly.yml里的相关位置在bash中输入hexo g -d后进入网页，你的页面加载进度条就出现了效果如下图：
@@ -166,7 +157,7 @@ Step4：在上方选择你登录的QQ号后，点击修改头像自此，你的�
 第二步！下载由ShinyGHASTTear大佬制作的我的世界字母模型点击下面这个小小的文字下载下载！下载好后，打开Mine-imator，进入第三步，可自由发挥
 第三步！进入Mine-imator后，点击这个New Project之后Name（名字），Author（制作者），Description（介绍），随便填创好后应该会进入这个界面看到左上角那个工作台了没，点它圈起来的就是要用的点击地形，点击Scenery，“Import from world”就是从我的世界官方默认路径里的地图里抠出来一点地形（也可以用其他路径的地图）“Browse”就是从一些地形文件里导入，有 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2023/fen-xiang-yi-xie-vbs-xiao-zi-yuan/" title="分享：一些VBS小资源"><img class="post-bg" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s2.loli.net/2023/01/20/BUkZo85Olntr9uJ.jpg" onerror="this.onerror=null;this.src='/img/404mc.jpg'" alt="分享：一些VBS小资源"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/fen-xiang-yi-xie-vbs-xiao-zi-yuan/" title="分享：一些VBS小资源">分享：一些VBS小资源</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-18T07:52:19.000Z" title="发表于 2023-01-18 15:52:19">2023-01-18</time></span></div><div class="content">VBS是什么?VBS是基于Visual Basic的脚本语言。VBS的全称是：Microsoft Visual Basic Script Edition。（微软公司可视化BASIC脚本版）。大家可以百度查查关于vbs的其他信息，天影大侠这里贴心地准备了百度百科链接…当然了，和你们一样，我只是一个新手，碰vbs都是为了整蛊好友们所以，这里就分享天影大侠在网上找到的一些vbs资源中文部分可自行修改
 
-一个问题，如不选择”是”，则永不能退出！123456789101112131415161718192021doa =msgbox(&quot;问题内容！！！&quot;,vbYesNoCancel,&quot;问题标题&quot;)if a =vbYes thenmsgbox &quot;Yes回答内容&quot;,,&quot;标题&quot;exit doelseif a =vbNo thenb =msgbox(&quot;你完了&quot;,vbYesNo,&quot;你完了。&quot;)if b =vbYes thenmsgbox &quot;你完了！&quot;,,&quot;你完 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://weavatar.com/avatar/7388ea4765a319d5f83fea61c3236384?s=500" onerror="this.onerror=null;this.src='/img/grassblock.gif'" alt="avatar"/></div><div class="author-info__name">天影大侠</div><div class="author-info__description">The Blog of SkyShadowHero!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/SkyShadowHero" target="_blank" title="Github"><i class="fab fa-github" style="color: ;"></i></a><a class="social-icon" href="mailto:a1233456333@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: ;"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=3014429800" target="_blank" title="QQ"><i class="fab fa-qq" style="color: ;"></i></a><a class="social-icon" href="https://discord.com/users/916650101743706112" target="_blank" title="Discord"><i class="fab fa-discord" style="color: ;"></i></a><a class="social-icon" href="https://t.me/SkyShadowHero" target="_blank" title="Telegram"><i class="fab fa-telegram" style="color: ;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><span id="type-container"></span></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/yong-canta-shan-chu-shou-ji-zi-dai-de-xi-tong-ruan-jian/" title="用Canta删除手机自带的系统软件！">用Canta删除手机自带的系统软件！</a><time datetime="2024-02-15T07:52:50.000Z" title="发表于 2024-02-15 15:52:50">2024-02-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/wu-xu-root-gei-ni-de-qq-tian-jia-mo-kuai/" title="无需root给QQ添加模块！">无需root给QQ添加模块！</a><time datetime="2024-02-13T02:05:50.000Z" title="发表于 2024-02-13 10:05:50">2024-02-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/fen-xiang-yi-ge-an-zhuo-shang-de-ling-dong-dao-ying-yong-dynamicspot/" title="分享一个安卓上的灵动岛应用，DynamicSpot！">分享一个安卓上的灵动岛应用，DynamicSpot！</a><time datetime="2024-02-06T09:37:51.000Z" title="发表于 2024-02-06 17:37:51">2024-02-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/shi-yong-typed-js-lai-gei-ni-de-wang-ye-tian-jia-da-zi-xiao-guo-ba/" title="使用typed.js来给你的网页添加打字效果吧">使用typed.js来给你的网页添加打字效果吧</a><time datetime="2023-08-12T02:30:54.000Z" title="发表于 2023-08-12 10:30:54">2023-08-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/fen-xiang-yi-ge-python-shen-gao-ji-suan-qi-hua-ji/" title="分享:一个python身高计算器/滑稽">分享:一个python身高计算器/滑稽</a><time datetime="2023-08-11T02:27:38.000Z" title="发表于 2023-08-11 10:27:38">2023-08-11</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/html/" style="font-size: 1.33em; color: rgb(157, 178, 80)">html</a><a href="/tags/js/" style="font-size: 1.15em; color: rgb(103, 16, 125)">js</a><a href="/tags/typed-js/" style="font-size: 1.15em; color: rgb(17, 163, 190)">typed.js</a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.45em; color: rgb(23, 57, 103)">教程</a><a href="/tags/Minecraft/" style="font-size: 1.21em; color: rgb(96, 169, 168)">Minecraft</a><a href="/tags/logo/" style="font-size: 1.15em; color: rgb(21, 178, 185)">logo</a><a href="/tags/python/" style="font-size: 1.27em; color: rgb(23, 169, 126)">python</a><a href="/tags/tkinter/" style="font-size: 1.21em; color: rgb(137, 16, 99)">tkinter</a><a href="/tags/%E5%88%86%E4%BA%AB/" style="font-size: 1.39em; color: rgb(156, 60, 26)">分享</a><a href="/tags/%E7%81%B5%E5%8A%A8%E5%B2%9B/" style="font-size: 1.15em; color: rgb(187, 53, 141)">灵动岛</a><a href="/tags/VBS/" style="font-size: 1.15em; color: rgb(28, 137, 164)">VBS</a><a href="/tags/QQ/" style="font-size: 1.21em; color: rgb(75, 156, 93)">QQ</a><a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 1.21em; color: rgb(143, 28, 139)">安卓</a><a href="/tags/adb/" style="font-size: 1.15em; color: rgb(14, 106, 98)">adb</a><a href="/tags/css/" style="font-size: 1.15em; color: rgb(55, 116, 42)">css</a><a href="/tags/music/" style="font-size: 1.15em; color: rgb(83, 99, 8)">music</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-09-24T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-02-23T03:49:12.035Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By 天影大侠</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎来到天影大侠的小博客！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+一个问题，如不选择”是”，则永不能退出！123456789101112131415161718192021doa =msgbox(&quot;问题内容！！！&quot;,vbYesNoCancel,&quot;问题标题&quot;)if a =vbYes thenmsgbox &quot;Yes回答内容&quot;,,&quot;标题&quot;exit doelseif a =vbNo thenb =msgbox(&quot;你完了&quot;,vbYesNo,&quot;你完了。&quot;)if b =vbYes thenmsgbox &quot;你完了！&quot;,,&quot;你完 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://weavatar.com/avatar/7388ea4765a319d5f83fea61c3236384?s=500" onerror="this.onerror=null;this.src='/img/grassblock.gif'" alt="avatar"/></div><div class="author-info__name">天影大侠</div><div class="author-info__description">The Blog of SkyShadowHero!</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">15</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/SkyShadowHero" target="_blank" title="Github"><i class="fab fa-github" style="color: ;"></i></a><a class="social-icon" href="mailto:a1233456333@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: ;"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=3014429800" target="_blank" title="QQ"><i class="fab fa-qq" style="color: ;"></i></a><a class="social-icon" href="https://discord.com/users/916650101743706112" target="_blank" title="Discord"><i class="fab fa-discord" style="color: ;"></i></a><a class="social-icon" href="https://t.me/SkyShadowHero" target="_blank" title="Telegram"><i class="fab fa-telegram" style="color: ;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><span id="type-container"></span></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/yong-canta-shan-chu-shou-ji-zi-dai-de-xi-tong-ruan-jian/" title="用Canta删除手机自带的系统软件！">用Canta删除手机自带的系统软件！</a><time datetime="2024-02-15T07:52:50.000Z" title="发表于 2024-02-15 15:52:50">2024-02-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/wu-xu-root-gei-ni-de-qq-tian-jia-mo-kuai/" title="无需root给QQ添加模块！">无需root给QQ添加模块！</a><time datetime="2024-02-13T02:05:50.000Z" title="发表于 2024-02-13 10:05:50">2024-02-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/fen-xiang-yi-ge-an-zhuo-shang-de-ling-dong-dao-ying-yong-dynamicspot/" title="分享一个安卓上的灵动岛应用，DynamicSpot！">分享一个安卓上的灵动岛应用，DynamicSpot！</a><time datetime="2024-02-06T09:37:51.000Z" title="发表于 2024-02-06 17:37:51">2024-02-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/shi-yong-typed-js-lai-gei-ni-de-wang-ye-tian-jia-da-zi-xiao-guo-ba/" title="使用typed.js来给你的网页添加打字效果吧">使用typed.js来给你的网页添加打字效果吧</a><time datetime="2023-08-12T02:30:54.000Z" title="发表于 2023-08-12 10:30:54">2023-08-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/fen-xiang-yi-ge-python-shen-gao-ji-suan-qi-hua-ji/" title="分享:一个python身高计算器/滑稽">分享:一个python身高计算器/滑稽</a><time datetime="2023-08-11T02:27:38.000Z" title="发表于 2023-08-11 10:27:38">2023-08-11</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/html/" style="font-size: 1.33em; color: rgb(74, 43, 175)">html</a><a href="/tags/js/" style="font-size: 1.15em; color: rgb(160, 38, 103)">js</a><a href="/tags/typed-js/" style="font-size: 1.15em; color: rgb(63, 1, 147)">typed.js</a><a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.45em; color: rgb(144, 26, 119)">教程</a><a href="/tags/Minecraft/" style="font-size: 1.21em; color: rgb(171, 100, 152)">Minecraft</a><a href="/tags/logo/" style="font-size: 1.15em; color: rgb(70, 141, 67)">logo</a><a href="/tags/python/" style="font-size: 1.27em; color: rgb(51, 108, 42)">python</a><a href="/tags/tkinter/" style="font-size: 1.21em; color: rgb(66, 79, 105)">tkinter</a><a href="/tags/%E5%88%86%E4%BA%AB/" style="font-size: 1.39em; color: rgb(70, 129, 3)">分享</a><a href="/tags/%E7%81%B5%E5%8A%A8%E5%B2%9B/" style="font-size: 1.15em; color: rgb(14, 197, 109)">灵动岛</a><a href="/tags/VBS/" style="font-size: 1.15em; color: rgb(175, 73, 100)">VBS</a><a href="/tags/QQ/" style="font-size: 1.21em; color: rgb(9, 181, 104)">QQ</a><a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 1.21em; color: rgb(74, 99, 150)">安卓</a><a href="/tags/adb/" style="font-size: 1.15em; color: rgb(0, 117, 117)">adb</a><a href="/tags/css/" style="font-size: 1.15em; color: rgb(36, 188, 120)">css</a><a href="/tags/music/" style="font-size: 1.15em; color: rgb(63, 2, 2)">music</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/02/"><span class="card-archive-list-date">二月 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">15</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2022-09-24T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-02-23T03:50:58.117Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By 天影大侠</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎来到天影大侠的小博客！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
   init: (str) => {
     window.typed = new Typed('#subtitle', Object.assign({
       strings: str,
