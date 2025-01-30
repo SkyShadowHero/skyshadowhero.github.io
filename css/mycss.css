@@ -1,0 +1,165 @@
+/* 首页文章卡片 */
+#recent-posts > .recent-post-item{
+	background:rgba(255, 255, 255, 0.8)!important;
+}
+/* 首页侧栏卡片 */
+.card-widget{
+background:rgba(255, 255, 255, 0.8)!important;
+}
+/* 文章页面正文背景 */
+div#post{
+background: rgba(255, 255, 255, 0.8)!important;
+}
+/* 分页页面 */
+div#page{
+background: rgba(255, 255, 255, 0.8)!important;
+}
+/* 归档页面 */
+div#archive{
+background: rgba(255, 255, 255, 0.8)!important;
+}
+/* 标签页面 */
+div#tag{
+background: rgba(255, 255, 255, 0.8)!important;
+}
+/* 分类页面 */
+div#category{
+background: rgba(255, 255, 255, 0.8)!important;
+}
+
+}
+/*白天模式伪类遮罩层透明*/
+[data-theme="light"]
+  #footer::before{
+      background: transparent!important;
+    }
+/*夜间模式伪类遮罩层透明*/
+/*[data-theme="dark"]
+  #footer::before{
+      background: transparent!important;
+    }
+[data-theme="dark"]
+  #page-header::before{
+    background: transparent!important;
+    }*/
+/*夜间模式页面背景设置为半透明*/
+[data-theme="dark"] 
+#recent-posts > .recent-post-item{
+    background: rgba(0, 0, 0, 0.8)!important;
+}
+
+[data-theme="dark"]
+  #aside-content .card-widget{
+      background: rgba(0, 0, 0, 0.8)!important;
+    }
+[data-theme="dark"]
+  div#post{
+    background: rgba(0, 0, 0, 0.8)!important;
+    }
+[data-theme="dark"]
+  div#page{
+    background: rgba(0, 0, 0, 0.8)!important;
+    }
+[data-theme="dark"]
+  div#archive{
+    background: rgba(0, 0, 0, 0.8)!important;
+    }
+[data-theme="dark"]
+  div#tag{
+    background: rgba(0, 0, 0, 0.8)!important;
+  }
+[data-theme="dark"]
+  div#category{
+    background: rgba(0, 0, 0, 0.8)!important;
+  }
+  
+/*阅读模式*/
+.read-mode #aside-content .card-widget{
+      background: rgba(158, 208, 255, 0.8)!important;
+    }
+.read-mode div#post{
+    background: rgba(158, 208, 255, 0.8)!important;
+    }
+/*夜间阅读模式*/
+[data-theme="dark"]
+  .read-mode #aside-content .card-widget{
+        background: rgba(0, 0, 0, 0.8)!important;
+        color: #eeeeee;
+      }
+[data-theme="dark"]  
+  .read-mode div#post{
+      background: rgba(0, 0, 0, 0.8)!important;
+      color: #eeeeee;
+      }
+/* 页脚透明渐变 */
+#footer {
+  background: rgba(0, 0, 0, 0)!important;
+}
+#sakana-widget {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+#spidercanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+#calculate-button {
+  padding: 10px 10px;
+  background-color: #2299DD;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#spiderbutton {
+  padding: 10px 10px;
+  background-color: #2299DD;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#speed_button {
+  padding: 10px 10px;
+  background-color: #2299DD;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.typed-cursor {
+  transform: rotate(-30deg);
+}
+#web_bg {
+  background-color: rgb(135, 168, 199);
+  background-image: url('https://s2.loli.net/2024/02/16/kxJvDFad17r6zQ9.webp');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+}
