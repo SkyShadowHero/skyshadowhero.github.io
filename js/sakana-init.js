@@ -6,7 +6,7 @@ function initSakanaWidget() {
   
   new SakanaWidget({
     character: "spiderman",
-    controls: true,
+    controls: false,
   }).mount("#sakana-widget");
 }
 document.addEventListener("DOMContentLoaded", () => {
